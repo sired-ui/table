@@ -50,7 +50,7 @@ table {
 }
 .menu {
 vertical-align: middle;
-margin-top: 65%;
+margin-top: 50%;
 }
 .menua {
 	background: blue;
@@ -88,7 +88,7 @@ table {
 }
 .menu {
 vertical-align: middle;
-margin-top: 65%;
+margin-top: 50%;
 }
 .menua {
 	background: blue;
@@ -126,7 +126,7 @@ table {
 }
 .menu {
 vertical-align: middle;
-margin-top: 65%;
+margin-top: 50%;
 }
 .menua {
 	background: blue;
@@ -200,8 +200,8 @@ a {
 }
 
 a:hover {
-	opacity: 0.7;
-	transition: 1s;
+	opacity: 0.9;
+	transition: 0.5s;
 }
 
 li {
@@ -214,3 +214,10 @@ li {
 	margin-top: 25px;
 }
 
+
+.menua{
+	cursor: pointer;
+}
+.menua:hover{
+	opacity: 0.8;
+}
