@@ -82,7 +82,8 @@
 			table.onmousedown = function(event) {
 	            t=event.target||event.srcElement; 
 	         	if (Number(t.getAttribute("id")) == check){
-	         		if (check!=arg){
+	         		check++;
+	         		if (check!=arg+1){
 	         			t.setAttribute("style","color:black;");
 	         			var newdiv = document.getElementById("find");
 	         			newdiv.innerHTML = String(check);
@@ -102,7 +103,6 @@
 			        	timeu.appendChild(document.createTextNode("Ваше время: "+time3));
 			        	document.querySelectorAll("#getGames")[0].appendChild(timeu);
 	         		}
-	         		check++;
 	         	}
     		}
         	}
@@ -128,7 +128,7 @@
 	<div class="menu unselectable">
 <div class="menua unselectable" onclick="show(0)">Играть</div>
 <div class="menua unselectable"><a>Последние 10 игр</a></div>
-<!-- <div class="menua unselectable"><a>Рекорды</a></div> -->
+<div class="menua unselectable"><a>Рекорды</a></div>
 </div>
 <br>
 <div class="unselectable" id="getGames" style="padding-top: 5px;display:none;">
