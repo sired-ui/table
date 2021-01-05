@@ -60,6 +60,25 @@ table {
   user-select: none;   
 }
 }
+@media all and (min-width: 450px) {
+.number {
+	font-size: 45px;
+	padding: 10px 10px;
+    width: 45px;
+    height: 45px;
+	cursor:pointer;
+	border:1px solid black;
+	background:blue;
+	border-radius: 10px;
+	color:#fff;
+	 -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;   
+}
+}
 .number:hover {
 	opacity:0.8;
 }
