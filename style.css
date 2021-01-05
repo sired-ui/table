@@ -6,6 +6,8 @@ body {
 
 table {
 	margin-top: 50px;
+	text-align: center;
+	font-weight: bold;
 }
 
 .selectors {
@@ -40,6 +42,11 @@ table {
   -ms-user-select: none;       /* Internet Explorer/Edge */
   user-select: none;   
 }
+table {
+	margin-top: 50px;
+	width: 268px;
+    height: 268px;
+}
 }
 @media all and (min-width: 350px) and (max-width: 450px)  {
 .number {
@@ -58,6 +65,11 @@ table {
   -moz-user-select: none;      /* Firefox */
   -ms-user-select: none;       /* Internet Explorer/Edge */
   user-select: none;   
+}
+table {
+	margin-top: 50px;
+	width: 358px;
+    height: 373px;
 }
 }
 @media all and (min-width: 450px) {
@@ -78,9 +90,17 @@ table {
   -ms-user-select: none;       /* Internet Explorer/Edge */
   user-select: none;   
 }
+table {
+	margin-top: 50px;
+	width: 418px;
+    height: 443px;
+}
 }
 .number:hover {
 	opacity:0.8;
+	color:#fff;
+	background: #000000;
+	transition: 0.5s;
 }
 
 .number:active {

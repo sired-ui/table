@@ -71,9 +71,10 @@
         function StartGame(arg){
         	var time1 = Date.now();
         	newdiv = document.createElement("DIV");
-        	newdiv.setAttribute("id","find")
-        	newdiv.appendChild(document.createTextNode("Найдите цифру 1"));
-        	document.querySelectorAll("center")[0].appendChild(newdiv);
+        	newdiv.setAttribute("id","find");
+        	newdiv.setAttribute("class","number");
+        	newdiv.appendChild(document.createTextNode("1"));
+        	document.querySelectorAll("div")[0].appendChild(newdiv);
 			check = 1;
 			table = document.getElementById("game");
 			table.onclick = function(event) {
@@ -83,11 +84,11 @@
 	         		if (check!=arg+1){
 	         			t.setAttribute("style","color:black;");
 	         			var newdiv = document.getElementById("find");
-	         			newdiv.innerHTML = "Найдите цифру "+String(check);
+	         			newdiv.innerHTML = String(check);
 	         			t.setAttribute("style","color:white;");
 	         		}else{
 	         			var newdiv = document.getElementById("find");
-	         			newdiv.innerHTML = "Игра завершена";
+	         			newdiv.innerHTML = "X";
 	         			var time2 = Date.now();
 	         			var timeg = Math.round((time2-time1)/1000);
 	         			var time3 = Math.round((time2-time1)/1000);
@@ -99,13 +100,6 @@
 			        	timeu.setAttribute("id","timer")
 			        	timeu.appendChild(document.createTextNode("Ваше время: "+time3));
 			        	document.querySelectorAll("center")[0].appendChild(timeu);
-						var xhr = new XMLHttpRequest();
-						  xhr.open('GET', '/top.php?times='+timeg+'&type='+arg+'&timeg='+Math.round(Date.now()/1000), true); // url = нужный вам адрес
-						  xhr.send(null);
-
-						  xhr.onreadystatechange = function(){
-						    if (xhr.readyState != 4) return; // если нет ошибок возвращаем нужный текст
-						   }
 	         		}
 	         	}
     		}
