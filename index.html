@@ -82,8 +82,7 @@
 			table.onmousedown = function(event) {
 	            t=event.target||event.srcElement; 
 	         	if (Number(t.getAttribute("id")) == check){
-	         		check++;
-	         		if (check!=arg+1){
+	         		if (check!=arg){
 	         			t.setAttribute("style","color:black;");
 	         			var newdiv = document.getElementById("find");
 	         			newdiv.innerHTML = String(check);
@@ -103,6 +102,7 @@
 			        	timeu.appendChild(document.createTextNode("Ваше время: "+time3));
 			        	document.querySelectorAll("#getGames")[0].appendChild(timeu);
 	         		}
+	         		check++;
 	         	}
     		}
         	}
