@@ -1,0 +1,72 @@
+body {
+	background: url('https://www.tokkoro.com/picsup/3395965-patterns-dark-background-shadow-texture.jpg') fixed no-repeat;
+	background-size: auto;
+	color:#fff;
+}
+
+table {
+	margin-top: 50px;
+}
+
+.selectors {
+	width:30%;
+}
+
+.select {
+	cursor:pointer;
+	width:40px;
+}
+
+.select:hover {
+	opacity:0.7;
+	border-bottom:1px solid;
+	transition: 2s;
+}
+
+.number {
+	font-size: 45px;
+	padding: 10px 10px;
+    width: 55px;
+    height: 55px;
+	cursor:pointer;
+	border:1px solid black;
+	background:blue;
+	border-radius: 10px;
+	color:#fff;
+	 -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;   
+}
+
+.number:hover {
+	opacity:0.8;
+}
+
+.number:active {
+	color:black;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 37%;
+}
+a {
+	text-decoration: none;
+	border-radius:5px;
+	background: blue;
+	color:#fff;
+	padding:10px;
+}
+
+a:hover {
+	opacity: 0.7;
+	transition: 1s;
+}
+
+li {
+	float: left;
+	padding:10px;
+}
