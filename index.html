@@ -68,13 +68,13 @@
 				StartGame(arg);
 			}
         }
-        function StartGame(arg){
+        async function StartGame(arg){
         	var time1 = Date.now();
         	newdiv = document.createElement("DIV");
         	newdiv.setAttribute("id","find");
         	newdiv.setAttribute("class","number");
         	newdiv.appendChild(document.createTextNode("1"));
-        	document.querySelectorAll("div")[0].appendChild(newdiv);
+        	document.querySelectorAll("#getGames")[0].appendChild(newdiv);
 			check = 1;
 			table = document.getElementById("game");
 			table.onclick = function(event) {
@@ -99,22 +99,42 @@
 	         			timeu = document.createElement("DIV");
 			        	timeu.setAttribute("id","timer")
 			        	timeu.appendChild(document.createTextNode("Ваше время: "+time3));
-			        	document.querySelectorAll("div")[0].appendChild(timeu);
+			        	document.querySelectorAll("#getGames")[0].appendChild(timeu);
 	         		}
 	         	}
     		}
         	}
+    function show(a){
+    	if (a==0){
+    		document.getElementsByClassName("menu")[0].setAttribute("style","display:none;");
+    		document.getElementById("getGames").setAttribute("style","padding-top: 5px;");
+
+    	}
+    	if (a==1){
+    		document.getElementsByClassName("menu")[0].removeAttribute("style","display:none;");
+    		document.getElementById("getGames").setAttribute("style","display:none;");
+    		document.getElementById("game").remove();
+    		document.getElementById("find").remove();
+
+    	}
+    }
     </script>
 </head>
 <body>
-	<center>
-<!-- <ul>
-<li><a href="/">Игра</a></li>
-<li><a href="/top.php?getlast=1">Последние 10 игр</a></li>
-<li><a href="/top.php?getrecords=1">Рекорды</a></li>
-</ul> -->
+<center>
+	<div class="menu">
+<div class="menua"><a onclick="show(0)">Играть</a></div>
+<div class="menua"><a href="/top.php?getlast=1">Последние 10 игр</a></div>
+<div class="menua"><a href="/top.php?getrecords=1">Рекорды</a></div>
+</div>
 <br>
-<div style="padding-top: 5px;">
+<div id="getGames" style="padding-top: 5px;display:none;">
+	<a onclick="show(1)"><svg height="40px" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 -3 6.82666 6.82666" width="30px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style type="text/css">
+   <![CDATA[
+    .fil1 {fill:none}
+    .fil0 {fill:#00f;fill-rule:nonzero}
+   ]]>
+  </style></defs><g id="Layer_x0020_1"><g id="_506615432"><path class="fil0" d="M5.76 3.62667c0.117819,0 0.213335,-0.0955157 0.213335,-0.213335 0,-0.117819 -0.0955157,-0.213335 -0.213335,-0.213335l-4.69334 0c-0.117819,0 -0.213335,0.0955157 -0.213335,0.213335 0,0.117819 0.0955157,0.213335 0.213335,0.213335l4.69334 0z" id="_506615984"/><path class="fil0" d="M2.4487 5.09704c0.0833031,0.0833031 0.218366,0.0833031 0.301669,0 0.0833031,-0.0833031 0.0833031,-0.218366 0,-0.301669l-1.38204 -1.38204 1.38204 -1.38204c0.0833031,-0.0833031 0.0833031,-0.218366 0,-0.301669 -0.0833031,-0.0833031 -0.218366,-0.0833031 -0.301669,0l-1.53163 1.53163 -0.00125984 0.00122835c-0.083311,0.083311 -0.083311,0.21839 0,0.301701l1.5748e-005 -1.5748e-005 1.53287 1.53288z" id="_506616128"/></g></g><rect class="fil1" height="6.82666" width="6.82666"/></svg></a>
 <a onclick="CreateTable(3)" class="select">3x3</a>
 <a onclick="CreateTable(4)" class="select">4x4</a>
 <a onclick="CreateTable(5)" class="select">5x5</a>
