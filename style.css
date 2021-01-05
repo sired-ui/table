@@ -22,7 +22,7 @@ table {
 	border-bottom:1px solid;
 	transition: 2s;
 }
-
+@media all and (min-width: 320px) and (max-width: 350px)  {
 .number {
 	font-size: 20px;
 	padding: 10px 10px;
@@ -40,7 +40,26 @@ table {
   -ms-user-select: none;       /* Internet Explorer/Edge */
   user-select: none;   
 }
-
+}
+@media all and (min-width: 350px) and (max-width: 450px)  {
+.number {
+	font-size: 35px;
+	padding: 10px 10px;
+    width: 40px;
+    height: 40px;
+	cursor:pointer;
+	border:1px solid black;
+	background:blue;
+	border-radius: 10px;
+	color:#fff;
+	 -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;   
+}
+}
 .number:hover {
 	opacity:0.8;
 }
