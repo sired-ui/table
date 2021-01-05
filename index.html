@@ -24,6 +24,7 @@
 			var num = 0;
 			var table = document.createElement("TABLE");
 			table.setAttribute("id","game");
+			table.setAttribute("class","unselectable");
 			document.querySelectorAll("center")[0].appendChild(table);
 			for (var i=0; i<alltr;i++){
 				var tr = document.createElement("TR");
@@ -52,6 +53,7 @@
 				var num = 0;
 				var table = document.createElement("TABLE");
 				table.setAttribute("id","game");
+				table.setAttribute("class","unselectable");
 				document.querySelectorAll("center")[0].appendChild(table);
 				for (var i=0; i<alltr;i++){
 					var tr = document.createElement("TR");
@@ -77,7 +79,7 @@
         	document.querySelectorAll("#getGames")[0].appendChild(newdiv);
 			check = 1;
 			table = document.getElementById("game");
-			table.onclick = function(event) {
+			table.onmousedown = function(event) {
 	            t=event.target||event.srcElement; 
 	         	if (Number(t.getAttribute("id")) == check){
 	         		check++;
@@ -123,23 +125,23 @@
 </head>
 <body>
 <center>
-	<div class="menu">
-<div class="menua" onclick="show(0)">Играть</div>
-<div class="menua"><a>Последние 10 игр</a></div>
-<div class="menua"><a>Рекорды</a></div>
+	<div class="menu unselectable">
+<div class="menua unselectable" onclick="show(0)">Играть</div>
+<div class="menua unselectable"><a>Последние 10 игр</a></div>
+<div class="menua unselectable"><a>Рекорды</a></div>
 </div>
 <br>
-<div id="getGames" style="padding-top: 5px;display:none;">
+<div class="unselectable" id="getGames" style="padding-top: 5px;display:none;">
 	<a style="cursor:pointer;" onclick="show(1)"><svg height="40px" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 -3 6.82666 6.82666" width="30px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style type="text/css">
    <![CDATA[
     .fil1 {fill:none}
     .fil0 {fill:#00f;fill-rule:nonzero}
    ]]>
   </style></defs><g id="Layer_x0020_1"><g id="_506615432"><path class="fil0" d="M5.76 3.62667c0.117819,0 0.213335,-0.0955157 0.213335,-0.213335 0,-0.117819 -0.0955157,-0.213335 -0.213335,-0.213335l-4.69334 0c-0.117819,0 -0.213335,0.0955157 -0.213335,0.213335 0,0.117819 0.0955157,0.213335 0.213335,0.213335l4.69334 0z" id="_506615984"/><path class="fil0" d="M2.4487 5.09704c0.0833031,0.0833031 0.218366,0.0833031 0.301669,0 0.0833031,-0.0833031 0.0833031,-0.218366 0,-0.301669l-1.38204 -1.38204 1.38204 -1.38204c0.0833031,-0.0833031 0.0833031,-0.218366 0,-0.301669 -0.0833031,-0.0833031 -0.218366,-0.0833031 -0.301669,0l-1.53163 1.53163 -0.00125984 0.00122835c-0.083311,0.083311 -0.083311,0.21839 0,0.301701l1.5748e-005 -1.5748e-005 1.53287 1.53288z" id="_506616128"/></g></g><rect class="fil1" height="6.82666" width="6.82666"/></svg></a>
-<a onclick="CreateTable(3)" class="select">3x3</a>
-<a onclick="CreateTable(4)" class="select">4x4</a>
-<a onclick="CreateTable(5)" class="select">5x5</a>
-<a onclick="CreateTable(6)" class="select">6x6</a>
+<a onclick="CreateTable(3)" class="select unselectable">3x3</a>
+<a onclick="CreateTable(4)" class="select unselectable">4x4</a>
+<a onclick="CreateTable(5)" class="select unselectable">5x5</a>
+<a onclick="CreateTable(6)" class="select unselectable">6x6</a>
 </div>
 </center>
 </body>
