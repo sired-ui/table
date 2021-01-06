@@ -2,6 +2,7 @@ body {
 	background: #242424;
 	background-size: auto;
 	color:#fff;
+	overflow:hidden;
 }
 
 table {
