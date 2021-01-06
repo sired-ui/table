@@ -3,8 +3,12 @@ body {
 	background-size: auto;
 	color:#fff;
 	overflow:hidden;
+	overflow-x: hidden;
+	max-width: 100%;
 }
-
+html{
+	max-width: 100%;
+}
 table {
 	margin-top: 15px;
 	text-align: center;
