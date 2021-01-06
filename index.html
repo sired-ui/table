@@ -13,7 +13,7 @@
 <script type="text/javascript" src="//ad.mail.ru/static/admanhtml/rbadman-html5.min.js" charset="utf-8"></script>
 <script type="text/javascript" src="//vk.com/js/api/adman_init.js" charset="utf-8"></script>
 <script>
-  window.addEventListener('load', function() {
+   function getAdd() {
  
     var user_id = null;   // user's id
     var app_id = 7719096;  // your app's id
@@ -22,7 +22,7 @@
       user_id: user_id,
       app_id: 7719096,
       mobile: true,
-      type: 'rewarded'			// 'preloader' or 'rewarded' (default - 'preloader')
+      type: 'preloader'			// 'preloader' or 'rewarded' (default - 'preloader')
       //params: {preview: 1}   // to verify the correct operation of advertising
     }, onAdsReady, onNoAds);
  
@@ -34,7 +34,7 @@
       adman.start('preroll');
     };
     function onNoAds() {};
-  });
+  };
 </script>
 
     
@@ -140,6 +140,7 @@
     		}
         	}
     function show(a){
+    	getAdd();
     	if (a==0){
     		document.getElementsByClassName("menu")[0].setAttribute("style","display:none;");
     		document.getElementById("getGames").setAttribute("style","padding-top: 5px;");
@@ -159,7 +160,7 @@
 <body>
 <center>
 	<div class="menu unselectable">
-<div class="menua unselectable" onclick="show(0)">Играть</div>
+<div id="launch" class="menua unselectable" onclick="show(0)">Играть</div>
 <div class="menua unselectable"><a>Последние 10 игр</a></div>
 <div class="menua unselectable"><a>Рекорды</a></div>
 </div>
