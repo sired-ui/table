@@ -15,7 +15,7 @@ VK.init({
     apiId: 7719096
   });
 console.log(VK);
-VK.Api.call('users.get', {v:"5.126"}, function(r) {
+VK.Api('users.get', {v:"5.126"}, function(r) {
   if(r.response) {
     document.getElementById("launch").innerHTML = 'Привет, ' + r.response[0].first_name;
   }
