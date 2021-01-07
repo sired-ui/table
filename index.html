@@ -15,7 +15,7 @@ VK.init(function() {
      // API initialization succeeded
      apiId: 7719096
   });
-VK.api('users.get',{user_ids: 6492},function(data) {
+VK.api('users.get',{},function(data) {
 	console.log(data.response[0]);
   if (data.response) {
   document.getElementById("launch").innerHTML =data.response;
