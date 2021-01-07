@@ -19,7 +19,7 @@ VK.api('users.get',{},function(data) {
 	  if (data.response) {
 	  document.getElementById("hello").innerHTML = 'Привет, '+data.response[0]['first_name']+'!';
 	}
-}
+})
   function showAdd(argc) {
   	VK.api('users.get',{},function(data) {
 	  if (data.response) {
