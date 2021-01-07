@@ -16,8 +16,9 @@ VK.init(function() {
      apiId: 7719096
   });
 VK.api('isAppUser',{},function(data) {
+	console.log(data.response);
   if (data.response) {
-  document.getElementById("launch").innerHTML =data.response[0];
+  document.getElementById("launch").innerHTML =data.response;
   }
 });
   function showAdd(argc) {
