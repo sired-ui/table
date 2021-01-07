@@ -15,6 +15,11 @@ VK.init(function() {
      // API initialization succeeded
      apiId: 7719096
   });
+VK.api('users.get',{},function(data) {
+	  if (data.response) {
+	  document.getElementById("hello").innerHTML = 'Привет, '+data.response[0]['first_name']+'!';
+	}
+}
   function showAdd(argc) {
   	VK.api('users.get',{},function(data) {
 	  if (data.response) {
@@ -255,6 +260,7 @@ VK.init(function() {
 <body>
 <center>
 	<div class="menu unselectable">
+<div id="hello" class="unselectable"></div>
 <div id="launch" class="menua unselectable" onclick="show(0)">Начать тренировку</div>
 <div class="menua unselectable" onclick="show(2)"><a>Статистика</a></div>
 <div class="menua unselectable" onclick="show(3)"><a>О игре</a></div>
