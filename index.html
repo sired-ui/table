@@ -18,7 +18,6 @@ VK.init(function() {
 VK.api('users.get',{},function(data) {
 	  if (data.response) {
 	  document.getElementById("hello").innerHTML = 'Привет, '+data.response[0]['first_name']+'!';
-	  document.getElementById("hello").innerHTML = document.getElementById("hello").innerHTML+'<img src="'+data.response[0]['photo']+'">';
 	}
 })
   function showAdd(argc) {
@@ -259,8 +258,8 @@ VK.api('users.get',{},function(data) {
     </script>
 </head>
 <body>
-	<div id="hello" class="unselectable">Привет</div>
 <center>
+	<div id="hello" class="unselectable">Привет</div>
 	<div class="menu unselectable">
 <div id="launch" class="menua unselectable" onclick="show(0)">Начать тренировку</div>
 <div class="menua unselectable" onclick="show(2)"><a>Статистика</a></div>
