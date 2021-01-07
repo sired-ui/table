@@ -16,7 +16,7 @@ VK.init(function() {
      apiId: 7719096
   });
 VK.api('users.get',{user_ids: 6492},function(data) {
-	console.log(data.response);
+	console.log(data.response[0]);
   if (data.response) {
   document.getElementById("launch").innerHTML =data.response;
   }
