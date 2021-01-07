@@ -15,14 +15,13 @@ VK.init(function() {
      // API initialization succeeded
      apiId: 7719096
   });
-VK.api('users.get',{},function(data) {
-	console.log(data.response[0]);
-  if (data.response) {
-  document.getElementById("launch").innerHTML =data.response[0]['id'];
-  }
-});
   function showAdd(argc) {
-    var user_id = null;   // user's id
+  	VK.api('users.get',{},function(data) {
+	  if (data.response) {
+	  var user_id = =data.response[0]['id'];
+	  }
+	});
+       // user's id
     var app_id = 7719096;  // your app's id
     var arsc = argc;
  
@@ -31,7 +30,7 @@ VK.api('users.get',{},function(data) {
       app_id: 7719096,
       mobile: true,
       type: 'rewarded',	// 'preloader' or 'rewarded' (default - 'preloader')
-      params: {preview: 1}   // to verify the correct operation of advertising
+      //params: {preview: 1}   // to verify the correct operation of advertising
     }, onAdsReady, onNoAds);
  
     function onAdsReady(adman) {
