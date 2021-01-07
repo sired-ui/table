@@ -2,7 +2,6 @@ body {
 	background: #242424;
 	background-size: auto;
 	color:#fff;
-	overflow:hidden;
 }
 
 table {
@@ -140,7 +139,7 @@ margin-top: 50%;
     font-weight: bold;
 }
 }
-@media all and (min-width: 450px) {
+@media all and (min-width: 450px) and (max-width: 900px;) {
 .number {
 	font-size: 45px;
 	padding: 10px 10px;
@@ -178,6 +177,44 @@ margin-top: 30%;
     font-weight: bold;
 }
 }
+@media all and (min-width: 900px){
+.number {
+	font-size: 45px;
+	padding: 10px 10px;
+    width: 45px;
+    height: 45px;
+	cursor:pointer;
+	border:1px solid black;
+	background:blue;
+	border-radius: 10px;
+	color:#fff;
+	 -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;   
+}
+table {
+	margin-top: 15px;
+	width: 418px;
+    height: 443px;
+}
+.menu {
+vertical-align: middle;
+margin-top: 10%;
+}
+.menua {
+	background: blue;
+    height:100px;
+    text-align: center;
+    font-size: 50px;
+    margin: 20px;
+    line-height: 95px;
+    width:450px;
+    font-weight: bold;
+}
+}
 .number:hover {
 	opacity:0.8;
 	color:#fff;
@@ -188,11 +225,7 @@ margin-top: 30%;
 .number:active {
 	color:black;
 }
-ul {
-  list-style: none;
-  margin: 0;
-  text-align: center;
-}
+
 a {
 	text-decoration: none;
 	border-radius:5px;
@@ -203,12 +236,6 @@ a {
 a:hover {
 	opacity: 0.9;
 	transition: 0.5s;
-}
-
-li {
-    width: 200px;
-    background: blue;
-	padding:10px;
 }
 
 #find{
@@ -231,4 +258,7 @@ li {
   -ms-user-select: none;       /* Internet Explorer/Edge */
   user-select: none;           /* Non-prefixed version, currently
                                   not supported by any browser */
+}
+#about{
+	text-align: left;
 }

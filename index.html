@@ -10,28 +10,89 @@
 <script type="text/javascript" src="//ad.mail.ru/static/admanhtml/rbadman-html5.min.js" charset="utf-8"></script>
 <script type="text/javascript" src="//vk.com/js/api/adman_init.js" charset="utf-8"></script>
 <script>
-  window.addEventListener('load', function() {
- 
+
+  function showAdd(argc) {
     var user_id = null;   // user's id
     var app_id = 7719096;  // your app's id
+    var arsc = argc;
  
     admanInit({
       user_id: user_id,
       app_id: 7719096,
       mobile: true,
-      type: 'preloader',		// 'preloader' or 'rewarded' (default - 'preloader')
+      type: 'rewarded',	// 'preloader' or 'rewarded' (default - 'preloader')
       params: {preview: 1}   // to verify the correct operation of advertising
     }, onAdsReady, onNoAds);
  
     function onAdsReady(adman) {
       adman.onStarted(function () {});
-      adman.onCompleted(function() {});
+      adman.onCompleted(function() {
+      	var element=document.getElementById('game');
+   			var newdiv = document.getElementById("find");
+   			var timeu = document.getElementById("timer");
+			if(!element){
+				var arr = [];
+				arg = Math.pow(arsc,2);
+				for (var i = 1; i <= arg; i++) {
+					arr.push(i);
+				}
+				var alltr = Math.sqrt(Number(arr[arr.length-1]));
+				shuffle(arr);
+				var num = 0;
+				var table = document.createElement("TABLE");
+				table.setAttribute("id","game");
+				table.setAttribute("class","unselectable");
+				document.querySelectorAll("center")[0].appendChild(table);
+				for (var i=0; i<alltr;i++){
+					var tr = document.createElement("TR");
+					for (var j=0; j<alltr;j++){
+						var td = document.createElement("TD");
+						td.appendChild(document.createTextNode(arr[num]));
+						td.setAttribute("id", arr[num]);
+						td.setAttribute("class", "number");
+						tr.appendChild(td);
+						table.appendChild(tr);
+						num++;
+					}
+				}
+				StartGame(arg);
+			}else {
+				element.parentNode.removeChild(element);
+				if (newdiv) newdiv.parentNode.removeChild(newdiv);
+				if (timeu) timeu.parentNode.removeChild(timeu);
+					var arr = [];
+				arg = Math.pow(arsc,2);
+				for (var i = 1; i <= arg; i++) {
+					arr.push(i);
+				}
+				var alltr = Math.sqrt(Number(arr[arr.length-1]));
+				shuffle(arr);
+				var num = 0;
+				var table = document.createElement("TABLE");
+				table.setAttribute("id","game");
+				table.setAttribute("class","unselectable");
+				document.querySelectorAll("center")[0].appendChild(table);
+				for (var i=0; i<alltr;i++){
+					var tr = document.createElement("TR");
+					for (var j=0; j<alltr;j++){
+						var td = document.createElement("TD");
+						td.appendChild(document.createTextNode(arr[num]));
+						td.setAttribute("id", arr[num]);
+						td.setAttribute("class", "number");
+						tr.appendChild(td);
+						table.appendChild(tr);
+						num++;
+					}
+				}
+				StartGame(arg);
+			}
+      });
       adman.onSkipped(function() {});      
       adman.onClicked(function() {}); 
       adman.start('preroll');
     };
     function onNoAds() {};
-  });
+  };
 </script>
     
 
@@ -41,35 +102,40 @@
 		    return arr.sort(function() {return 0.5 - Math.random()});
 		}
    		function CreateTable(argс) {
+   			if (argс>3){
+   				showAdd(argс);
+   			}else{
    			var element=document.getElementById('game');
    			var newdiv = document.getElementById("find");
    			var timeu = document.getElementById("timer");
 			if(!element){
-			var arr = [];
-			arg = Math.pow(argс,2);
-			for (var i = 1; i <= arg; i++) {
-				arr.push(i);
-			}
-			var alltr = Math.sqrt(Number(arr[arr.length-1]));
-			shuffle(arr);
-			var num = 0;
-			var table = document.createElement("TABLE");
-			table.setAttribute("id","game");
-			table.setAttribute("class","unselectable");
-			document.querySelectorAll("center")[0].appendChild(table);
-			for (var i=0; i<alltr;i++){
-				var tr = document.createElement("TR");
-				for (var j=0; j<alltr;j++){
-					var td = document.createElement("TD");
-					td.appendChild(document.createTextNode(arr[num]));
-					td.setAttribute("id", arr[num]);
-					td.setAttribute("class", "number");
-					tr.appendChild(td);
-					table.appendChild(tr);
-					num++;
+				rus = ["а","б","в","г","д","е","ж","з","и","й","к","л","м","н","о","п","р","с","т","у","ф","х","ц","ч","ш","щ","ъ","ы","ь","э","ю","я"];
+				eng = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+				var arr = [];
+				arg = Math.pow(argс,2);
+				for (var i = 1; i <= arg; i++) {
+					arr.push(i);
 				}
-			}
-			StartGame(arg);
+				var alltr = Math.sqrt(Number(arr[arr.length-1]));
+				shuffle(arr);
+				var num = 0;
+				var table = document.createElement("TABLE");
+				table.setAttribute("id","game");
+				table.setAttribute("class","unselectable");
+				document.querySelectorAll("center")[0].appendChild(table);
+				for (var i=0; i<alltr;i++){
+					var tr = document.createElement("TR");
+					for (var j=0; j<alltr;j++){
+						var td = document.createElement("TD");
+						td.appendChild(document.createTextNode(arr[num]));
+						td.setAttribute("id", arr[num]);
+						td.setAttribute("class", "number");
+						tr.appendChild(td);
+						table.appendChild(tr);
+						num++;
+					}
+				}
+				StartGame(arg);
 			}else {
 				element.parentNode.removeChild(element);
 				if (newdiv) newdiv.parentNode.removeChild(newdiv);
@@ -101,6 +167,7 @@
 				StartGame(arg);
 			}
         }
+    }
         async function StartGame(arg){
         	var time1 = Date.now();
         	newdiv = document.createElement("DIV");
@@ -145,11 +212,32 @@
     	}
     	if (a==1){
     		document.getElementsByClassName("menu")[0].removeAttribute("style","display:none;");
+    		try{
     		document.getElementById("getGames").setAttribute("style","display:none;");
+    	}catch{}
+    		try{
     		document.getElementById("game").remove();
+    	}catch{}
+    		try{
     		document.getElementById("find").remove();
+    	}catch{}
+    		try{
     		document.getElementById("timer").remove();
-
+    	}catch{}
+    		try{
+    		document.getElementById("about").setAttribute("style","display:none;");
+    	}catch{}
+    		try{
+    		document.getElementById("stat").setAttribute("style","display:none;");
+    	}catch{}
+    	}
+    	if (a==2){
+    		document.getElementsByClassName("menu")[0].setAttribute("style","display:none;");
+    		document.getElementById("stat").setAttribute("style","padding-top: 5px;");
+    	}
+    	if (a==3){
+    		document.getElementsByClassName("menu")[0].setAttribute("style","display:none;");
+    		document.getElementById("about").setAttribute("style","padding-top: 5px;");
     	}
     }
     </script>
@@ -157,9 +245,38 @@
 <body>
 <center>
 	<div class="menu unselectable">
-<div id="launch" class="menua unselectable" onclick="show(0)">Играть</div>
-<div class="menua unselectable"><a>Последние 10 игр</a></div>
-<div class="menua unselectable"><a>Рекорды</a></div>
+<div id="launch" class="menua unselectable" onclick="show(0)">Начать тренировку</div>
+<div class="menua unselectable" onclick="show(2)"><a>Статистика</a></div>
+<div class="menua unselectable" onclick="show(3)"><a>О игре</a></div>
+</div>
+<div id="stat" style="display: none;" class="unselectable">
+	<a style="cursor:pointer;" onclick="show(1)"><svg height="40px" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 -3 6.82666 6.82666" width="30px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style type="text/css">
+   <![CDATA[
+    .fil1 {fill:none}
+    .fil0 {fill:#00f;fill-rule:nonzero}
+   ]]>
+  </style></defs><g id="Layer_x0020_1"><g id="_506615432"><path class="fil0" d="M5.76 3.62667c0.117819,0 0.213335,-0.0955157 0.213335,-0.213335 0,-0.117819 -0.0955157,-0.213335 -0.213335,-0.213335l-4.69334 0c-0.117819,0 -0.213335,0.0955157 -0.213335,0.213335 0,0.117819 0.0955157,0.213335 0.213335,0.213335l4.69334 0z" id="_506615984"/><path class="fil0" d="M2.4487 5.09704c0.0833031,0.0833031 0.218366,0.0833031 0.301669,0 0.0833031,-0.0833031 0.0833031,-0.218366 0,-0.301669l-1.38204 -1.38204 1.38204 -1.38204c0.0833031,-0.0833031 0.0833031,-0.218366 0,-0.301669 -0.0833031,-0.0833031 -0.218366,-0.0833031 -0.301669,0l-1.53163 1.53163 -0.00125984 0.00122835c-0.083311,0.083311 -0.083311,0.21839 0,0.301701l1.5748e-005 -1.5748e-005 1.53287 1.53288z" id="_506616128"/></g></g><rect class="fil1" height="6.82666" width="6.82666"/></svg></a>
+	<h1>Статистика</h1>
+</div>
+<div id="about" style="display: none;" class="unselectable">
+	<a style="cursor:pointer;" onclick="show(1)"><svg height="40px" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 -3 6.82666 6.82666" width="30px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style type="text/css">
+   <![CDATA[
+    .fil1 {fill:none}
+    .fil0 {fill:#00f;fill-rule:nonzero}
+   ]]>
+  </style></defs><g id="Layer_x0020_1"><g id="_506615432"><path class="fil0" d="M5.76 3.62667c0.117819,0 0.213335,-0.0955157 0.213335,-0.213335 0,-0.117819 -0.0955157,-0.213335 -0.213335,-0.213335l-4.69334 0c-0.117819,0 -0.213335,0.0955157 -0.213335,0.213335 0,0.117819 0.0955157,0.213335 0.213335,0.213335l4.69334 0z" id="_506615984"/><path class="fil0" d="M2.4487 5.09704c0.0833031,0.0833031 0.218366,0.0833031 0.301669,0 0.0833031,-0.0833031 0.0833031,-0.218366 0,-0.301669l-1.38204 -1.38204 1.38204 -1.38204c0.0833031,-0.0833031 0.0833031,-0.218366 0,-0.301669 -0.0833031,-0.0833031 -0.218366,-0.0833031 -0.301669,0l-1.53163 1.53163 -0.00125984 0.00122835c-0.083311,0.083311 -0.083311,0.21839 0,0.301701l1.5748e-005 -1.5748e-005 1.53287 1.53288z" id="_506616128"/></g></g><rect class="fil1" height="6.82666" width="6.82666"/></svg></a>
+	<h1>О игре</h1>
+	<b>Таблицы Шульте</b>  — таблицы со случайно расположенными объектами, служащие для проверки и развития быстроты нахождения этих объектов в определённом порядке. 
+	<br>Упражнения с таблицами позволяют улучшить периферическое зрительное восприятие.
+	<br>Развитие скорочтения:
+	<ul>
+		<li>Расстояние от таблицы до глаз должно быть таким же, как и при чтении книги, то есть примерно 30—35 см.</li>
+		<li>Перед началом работы с таблицей взгляд фиксируется в её центре и больше не сдвигается.</li>
+		<li>Находить числа нужно в возрастающем порядке от 1 до 25, без про́пусков, с максимальной быстротой, желательно не проговаривая числа ни про себя, ни вслух.</li>
+		<li>Очень важно избегать передвижений взгляда из центра и искать числа только периферическим зрением.</li>
+		<li>Время и периодичность тренировок нужно выбирать так, чтобы избежать переутомления. Обычно не более 10 таблиц в день.</li>
+		<li>По мере развития навыка переходят к таблицам с количеством ячеек 6x6, 7x7, 8x8, соответственно увеличивая и размер квадрата.</li>
+	</ul>
 </div>
 <br>
 <div class="unselectable" id="getGames" style="padding-top: 5px;display:none;">
@@ -170,9 +287,9 @@
    ]]>
   </style></defs><g id="Layer_x0020_1"><g id="_506615432"><path class="fil0" d="M5.76 3.62667c0.117819,0 0.213335,-0.0955157 0.213335,-0.213335 0,-0.117819 -0.0955157,-0.213335 -0.213335,-0.213335l-4.69334 0c-0.117819,0 -0.213335,0.0955157 -0.213335,0.213335 0,0.117819 0.0955157,0.213335 0.213335,0.213335l4.69334 0z" id="_506615984"/><path class="fil0" d="M2.4487 5.09704c0.0833031,0.0833031 0.218366,0.0833031 0.301669,0 0.0833031,-0.0833031 0.0833031,-0.218366 0,-0.301669l-1.38204 -1.38204 1.38204 -1.38204c0.0833031,-0.0833031 0.0833031,-0.218366 0,-0.301669 -0.0833031,-0.0833031 -0.218366,-0.0833031 -0.301669,0l-1.53163 1.53163 -0.00125984 0.00122835c-0.083311,0.083311 -0.083311,0.21839 0,0.301701l1.5748e-005 -1.5748e-005 1.53287 1.53288z" id="_506616128"/></g></g><rect class="fil1" height="6.82666" width="6.82666"/></svg></a>
 <a onclick="CreateTable(3)" class="select unselectable">3x3</a>
-<a onclick="CreateTable(4)" class="select unselectable">4x4</a>
-<a onclick="CreateTable(5)" class="select unselectable">5x5</a>
-<a onclick="CreateTable(6)" class="select unselectable">6x6</a>
+<a onclick="CreateTable(4)" class="select unselectable">4x4<img width="12px" src="pre.png"></a>
+<a onclick="CreateTable(5)" class="select unselectable">5x5<img width="12px" src="pre.png"></a>
+<a onclick="CreateTable(6)" class="select unselectable">6x6<img width="12px" src="pre.png"></a>
 </div>
 </center>
 </body>
