@@ -9,8 +9,16 @@
 <script type="text/javascript" src="//vk.com/js/api/xd_connection.js?2" charset="utf-8"></script>
 <script type="text/javascript" src="//ad.mail.ru/static/admanhtml/rbadman-html5.min.js" charset="utf-8"></script>
 <script type="text/javascript" src="//vk.com/js/api/adman_init.js" charset="utf-8"></script>
+<script src="https://vk.com/js/api/openapi.js?168" type="text/javascript"></script>
 <script>
-
+VK.init({
+    apiId: 7719096
+  });
+VK.Api.call('users.get', {user_ids: 6492, v:"5.73"}, function(r) {
+  if(r.response) {
+    alert('Привет, ' + r.response[0].first_name);
+  }
+});
   function showAdd(argc) {
     var user_id = null;   // user's id
     var app_id = 7719096;  // your app's id
@@ -265,7 +273,7 @@
     .fil0 {fill:#00f;fill-rule:nonzero}
    ]]>
   </style></defs><g id="Layer_x0020_1"><g id="_506615432"><path class="fil0" d="M5.76 3.62667c0.117819,0 0.213335,-0.0955157 0.213335,-0.213335 0,-0.117819 -0.0955157,-0.213335 -0.213335,-0.213335l-4.69334 0c-0.117819,0 -0.213335,0.0955157 -0.213335,0.213335 0,0.117819 0.0955157,0.213335 0.213335,0.213335l4.69334 0z" id="_506615984"/><path class="fil0" d="M2.4487 5.09704c0.0833031,0.0833031 0.218366,0.0833031 0.301669,0 0.0833031,-0.0833031 0.0833031,-0.218366 0,-0.301669l-1.38204 -1.38204 1.38204 -1.38204c0.0833031,-0.0833031 0.0833031,-0.218366 0,-0.301669 -0.0833031,-0.0833031 -0.218366,-0.0833031 -0.301669,0l-1.53163 1.53163 -0.00125984 0.00122835c-0.083311,0.083311 -0.083311,0.21839 0,0.301701l1.5748e-005 -1.5748e-005 1.53287 1.53288z" id="_506616128"/></g></g><rect class="fil1" height="6.82666" width="6.82666"/></svg></a>
-	<h1>О игре</h1>
+	<h1>О таблицах</h1>
 	<b>Таблицы Шульте</b>  — таблицы со случайно расположенными объектами, служащие для проверки и развития быстроты нахождения этих объектов в определённом порядке. 
 	<br>Упражнения с таблицами позволяют улучшить периферическое зрительное восприятие.
 	<br>Развитие скорочтения:
