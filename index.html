@@ -15,7 +15,7 @@ VK.init(function() {
      // API initialization succeeded
      apiId: 7719096
   });
-VK.api('user.get',{v: '5.126'},function(data) {
+VK.api('isAppUser',{v: '5.126'},function(data) {
   if (data.response) {
   document.getElementById("launch").innerHTML =data.response[0];
   }
